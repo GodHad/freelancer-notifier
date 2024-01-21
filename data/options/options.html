@@ -1,0 +1,149 @@
+﻿<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+<head>
+    <title>Options - Freelancer.com notifier</title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="../icons/options/16.png">
+    <link rel="stylesheet" type="text/css" href="options.css">
+    <!--<script type="text/javascript" src="css_browser_selector.js"></script>-->
+
+</head>
+<body class="flex">
+    <div id="header" class="flex">
+        <div style="">
+            <span>Options - Freelancer.com notifier</span>
+            <br>
+            <span class="note">Bring Browser's New Project Notifications to Desktop for Freelancer.com.</span>
+        </div>
+    </div>
+
+    <div id="content" class="flex">
+        <div style="margin: 10px 10px;">
+            <a class="btnSave save" href="#">Save</a>
+            <a class="btnSave reset" href="#">Reset to Default</a>
+        </div>
+        <table width="100%">
+            <tbody>
+
+                <tr>
+                    <td>New Projects:</td>
+                    <td>
+                        <p style="font-size: 17;">Receive notifications for the following Skills:</p>
+                        <div id="boxs">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Notifications:</td>
+                    <td>
+                        <label>
+                            <input type="checkbox" id="notification_show" > <span>Display desktop notification for new projects</span>
+                        </label>
+                        <p class="spacer"></p>
+                        <div class="box">
+                            <label>Priority of Notification is</label>
+                            <select id="notification_priority">
+                                <option value="-2">Only show on Taskbar</option>
+                                <option value="0">Default</option>
+                                <option value="2">Show Popup</option>
+                            </select>
+                        </div>
+                        <p class="spacer"></p>
+                        <span>Time to clear notifications from Taskbar </span>
+                        <input type="number" min="10" id="notification_time_clear" value="30"> <span>seconds</span>.
+                        <p class="note">Minimum period is 10 seconds.</p>
+                        <p class="spacer"></p>
+                        <div class="box">
+                            <label>Notification format</label>
+                            <input type="text" id="notification_format">
+                        </div>
+                        <p class="note"><span>Available keys:</span> [job_string], [summary], [budget], [user_name], [break].</p>
+                        <p class="spacer"></p>
+                        <span>Truncate notifications longer than</span>
+                        <input id="notification_truncate" type="number">
+                        <span>characters for [summary] fields.</span>
+                        <p class="spacer"></p>
+                        <label>
+                            <input type="checkbox" id="notification_sound_play" >
+                            <span>Play alert sound for new projects</span>
+                        </label>
+                        <div class="box">
+                            <label>Sound notification is</label>
+                            <select id="notification_sound_type">
+                                <option value="0.wav">Default alert</option>
+                                <option value="1.wav">Checker Plus bell alert</option>
+                                <option value="2.wav">Checker Plus ding alert</option>
+                                <option value="3.wav">Windows email alert</option>
+                            </select>
+                        </div>
+                        <p class="spacer"></p>
+                        <span>Volume of the sound notification is</span> <input id="notification_sound_volume" type="number" min="1" max="100" value="80">.
+                        <br>
+                        <p class="note">Volume is a number between 0 to 100 where 100 is the highest volume (default).</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ignoring (Blacklist):</td>
+                    <td>
+                        <div class="box">
+                            <label>(Blacklist) Ignore by Usernames. USD|EUR|INR|AUD|HKD|SGD is ignore contains one of that value</label>
+                            <input type="text" id="notification_ignore_uname">
+                        </div>
+                        <p class="note">Do not notify user's new project in list.</p>
+                        <p class="spacer"></p>
+                        <div class="box">
+                            <label>(Blacklist) Ignore by Title</label>
+                            <input type="text" id="notification_ignore_title">
+                        </div>
+                        <p class="note">
+                            Do not notify new project when Title match regex.<br />
+                            "([0-9 ]{5,100})" is ignore title not contains long number like selenium spam
+                        </p>
+                        <p class="spacer"></p>
+                        <div class="box">
+                            <label>(Blacklist) Ignore by Content</label>
+                            <input type="text" id="notification_ignore_content">
+                        </div>
+                        <p class="note">
+                            Do not notify new project when Title match regex.<br />
+                            USD|EUR|INR|AUD|HKD|SGD is ignore contains one of that value
+                        </p>
+                        <p class="spacer"></p>
+                        <div class="box">
+                            <label>(Blacklist) Ignore by Currency(USD, EUR, INR, AUD, HKD, SGD)</label>
+                            <input type="text" id="notification_ignore_currency">
+                        </div>
+                        <p class="note">
+                            Do not notify new project when Currency match regex.<br />
+                            USD|EUR|INR|AUD|HKD|SGD
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Other:</td>
+                    <td>
+                        <label>
+                            <input type="checkbox" id="notification_startup" >
+                            <span>Auto run extension when chrome start</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" id="notification_welcome" >
+                            <span>Show welcome page on upgrade</span>
+                        </label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="margin: 10px 10px;">
+            <a class="btnSave save" href="#">Save</a>
+            <a class="btnSave reset" href="#">Reset to Default</a>
+        </div>
+    </div>
+
+    <script type='text/javascript' src="jquery.js"></script>
+    <script type='text/javascript' src="config.js"></script>
+    <script type='text/javascript' src="data.js"></script>
+    <script type='text/javascript' src="options.js"></script>
+    <!--<script type='text/javascript' src="shadow_index.js"></script>-->
+</body>
+</html>
